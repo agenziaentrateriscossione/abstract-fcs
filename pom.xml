@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>it.tredi</groupId>
+	<artifactId>abstract-fcs</artifactId>
+	<version>6.0.7</version>
+	<packaging>jar</packaging>
+	<name>abstract-fcs</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+
+		<jdk.version>1.8</jdk.version>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<excludes>
+						<exclude>**/log4j2.properties</exclude>
+						<exclude>**/log4j2.xml</exclude>
+						<exclude>**/log4j2.yml</exclude>
+						<exclude>**/log4j2.yaml</exclude>
+						<exclude>**/log4j2.json</exclude>
+						<exclude>**/log4j2.jsn</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-1.2-api</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-web</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.tredi</groupId>
+			<artifactId>utils</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>it.tredi</groupId>
+			<artifactId>fcs-socket-commands</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>it.tredi</groupId>
+			<artifactId>attachment-text-extractor</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>it.tredi</groupId>
+			<artifactId>jodconverter-compare</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	</dependencies>
+	
+	<distributionManagement>
+		<repository>
+			<id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://ecatonchiro.bo.priv:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://ecatonchiro.bo.priv:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<url>http://gitlab.bo.priv/fca-fcs/it.tredi.abstract-fcs.git</url>
+		<developerConnection>scm:git:ssh://${git.username}@gitlab.bo.priv:fca-fcs/it.tredi.abstract-fcs.git</developerConnection>
+		<connection>scm:git:ssh://${git.username}@gitlab.bo.priv:fca-fcs/it.tredi.abstract-fcs.git</connection>
+	</scm>
+
+	<issueManagement>
+		<system>Redmine</system>
+		<url>https://easyredmine.3di.it</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://ecatonchiro.bo.priv:8080/jenkins/view/FCA-FCS/job/${project.groupId}.${project.artifactId}</url>
+	</ciManagement>
+</project>

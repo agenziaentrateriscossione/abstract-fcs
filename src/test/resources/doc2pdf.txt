@@ -1,0 +1,13 @@
+doc/TreeSizeFreeSetup.exe
+doc/DocxBig.docx
+doc/DocxLettreRelance.docx
+doc/DocxResume.docx
+doc/DocxStructures.docx
+doc/ooxml.docx
+doc/copertina.doc
+doc/2009-EQPOLIS-0106548.tif.p7m
+doc/relazione.docx
+doc/demo.docx
+doc/formazione-interna-gennaio-giugno-2015.ods
+doc/Manuale Qualita ISO 9001 2008 ver 3.0.1.odt
+doc/nota_spese.ods
