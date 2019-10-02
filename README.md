@@ -3,9 +3,9 @@
 
 ## Descrizione
 
-Definizione del servizio FCS (File Conversion Service) per estrazione testo, conversione (e confronto) di files. 
+Definizione del servizio [FCS](https://github.com/agenziaentrateriscossione/docway-fcs) (File Conversion Service) per estrazione testo, conversione (e confronto) di files. 
 
-Il progetto contene gia' tutta la business logic relativa alla comunicazione con FCA (o altro client Socket compatibile), all'estrazione di testo dagli allegati e alla conversione di files. Per poter essere utilizzato necessita l'estensione delle seguenti classi astratte:
+Il progetto contiene già tutta la business logic relativa alla comunicazione con [FCA](https://github.com/agenziaentrateriscossione/docway-fca) (o altro client Socket compatibile), all'estrazione di testo dagli allegati e alla conversione di files. Per poter essere utilizzato necessita l'estensione delle seguenti classi astratte:
 
 ### Fcs
 
